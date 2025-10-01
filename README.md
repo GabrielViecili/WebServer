@@ -60,25 +60,31 @@ curl -X POST [http://127.0.0.1:5000/api/data](http://127.0.0.1:5000/api/data) \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer SENHA_SUPER_SECRETA_123" \
 -d '{"data": "Este é um novo valor"}'
+```
+
 Resposta de Sucesso (Código 201):
 
-JSON
+```JSON
 
 {
   "message": "Valor adicionado com sucesso"
-}
-2. Obter Todos os Dados (GET /api/data)
+};
+```
+
+### 2. Obter Todos os Dados (GET /api/data)
+
 Retorna uma lista de todos os dados armazenados.
 
-Exemplo com curl:
-
-Bash
+**Exemplo com curl:**
+```Bash
 
 curl [http://127.0.0.1:5000/api/data](http://127.0.0.1:5000/api/data) \
 -H "Authorization: Bearer SENHA_SUPER_SECRETA_123"
-Resposta de Sucesso (Código 200):
+```
 
-JSON
+**Resposta de Sucesso (Código 200):**
+
+```JSON
 
 [
   {
@@ -87,11 +93,11 @@ JSON
     "value": "Este é um novo valor"
   }
 ]
-Respostas de Erro Comuns
-400 Bad Request: Se o corpo da requisição não for JSON ou se o campo data estiver faltando.
+```
 
-401 Unauthorized: Se o token de autorização estiver faltando ou for inválido.
+### Respostas de Erro Comuns
 
-404 Not Found: Se a rota acessada não existir.
-
-500 Internal Server Error: Se ocorrer um erro inesperado no servidor.
+* **400 Bad Request:** Se o corpo da requisição não for JSON ou se o campo `data` estiver faltando.
+* **401 Unauthorized:** Se o token de autorização estiver faltando ou for inválido.
+* **404 Not Found:** Se a rota acessada não existir.
+* **500 Internal Server Error:** Se ocorrer um erro inesperado no servidor.
